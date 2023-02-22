@@ -21,11 +21,10 @@ beta=10
 resId="${dataset}_vol"
 
 
-for K in 150
+for K in 17 25 50 75 100 125 150
 do
 	outDir=${main_dir}/result/${dataset}/${K}_network/init_r2
-	#for i in $(seq 1 50)
-	for i in 1 2 3 4 6 9 17 19 22 23 24 25 26 31 36 37 39 43 47
+	for i in $(seq 1 50)
 	do
 		sbjList_file=${sbjList_dir}/subList_${i}.txt
 		list_id=${i}
