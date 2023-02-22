@@ -1,6 +1,7 @@
 # The computation of multiscale brain functional connectivity measures
 
-1. We applied the personalized NMF brain decomposition method https://github.com/hmlicas/Collaborative_Brain_Decomposition and decomposed the brain into multiple scales. The basic functions can be referred to the brain decomposition repository. It mainly consists of three steps:
+1. We applied the personalized NMF brain decomposition method https://github.com/hmlicas/Collaborative_Brain_Decomposition and decomposed the brain into multiple scales. The basic functions can be referred to the brain decomposition repository above. It mainly consists of three steps:
 
-- A bootstrap stragety to 
-
+- We first computed group-level FNs using a normalized-cuts based spectral clustering method to identify representative FNs from 50 sets of group-level FNs, each set being computed on a subset of 150 subjects;
+- The group-level FNs were then used as initializing FNs to compute personalized FNs based on each subject’s fMRI data;
+- We computed the FNs at seven scales, yielding seven sets of  K (K=17, 25, 50, 75, 100, 125 and 150) FNs.
