@@ -7,6 +7,6 @@ This repository contains the codes and example data underlying our recent paper:
 
 
 # When you encounter issues
-This code was written by a single person as a research project!
+This code was written by a single person as a research project.
 
 I am currently still in the process of setting-up / testing this repository. If you encounter any of these bugs, please open a respective GitHub Issue; I will do my best to fix them in time!

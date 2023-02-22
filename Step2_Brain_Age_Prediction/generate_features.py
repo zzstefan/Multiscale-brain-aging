@@ -119,6 +119,7 @@ def correct_bias(predicted_age, chronological_age, sex):
     return model
 
 
+### Different regressors here.
 def predict_method(method, group=None):
     if method == 'SVR':
         rf = SVR(kernel='rbf')
@@ -160,6 +161,7 @@ def predict_method(method, group=None):
     return rf, random_grid
 
 
+### The correlation between the predicted age and the chronological age.
 def plot_realvspredicted(real_age, predicted_age, data, out_dir, k, Corr):
     color_dict = dict({'BLSA-3T': 'blue', 'CARDIA-1': 'red', 'CARDIA-3': 'pink', 'CARDIA-4': 'purple',
                        'OASIS-3': 'yellow', 'ABC': 'brown', 'UKBIOBANK': 'green'})
@@ -431,18 +433,6 @@ def get_between_scale_TC(K, All_TC):
     return new_data, k
 
 
-###harmonized in combat not paralleled (one by one)
-def full_between_scale_onebyone(TC, dataframe, to_harmonize, use_GAMs):
-    correlation_measure = ConnectivityMeasure(kind='correlation', vectorize=True, discard_diagonal=True)
-    correlation_matrix = correlation_measure.fit_transform(TC)
-    if to_harmonize == 1:
-        correlation_matrix = np.arctanh(correlation_matrix)
-        harmonized_features = np.tanh(harmonize_onebyone(correlation_matrix, dataframe, use_GAMs))
-    else:
-        harmonized_features = correlation_matrix
-    return harmonized_features
-
-
 ### tangent space parameterization with harmonic mean (paralleled)
 def harmonic_between_scale(TC, k, data, to_harmonize, use_GAMs, mean_index, num_cores, correlation_method='covariance'):
     correlation_measure = ConnectivityMeasure(kind=correlation_method)
@@ -608,13 +598,6 @@ def predict_between_scale(n_splits, n_cv_times, to_harmonize, FC_measure, tangen
     else:
         age_predict(features, n_splits, n_cv_times, new_k, age, NMF_fMRI, out_dir, regression_method)
 
-
-def predict_betweenNoWithin(n_splits, n_cv_times, regression_method, out_dir, main_dir):
-    features = np.load(os.path.dirname(out_dir) + '/features_542_1.npy')
-    NMF_fMRI = pd.read_pickle(main_dir + '/Data/final_NMF_fMRI.pkl')
-    age = NMF_fMRI.Age.values
-    new_k = 541 # means 542_1 which means we delete the within-scale features in the between-scale features
-    age_predict(features, n_splits, n_cv_times, new_k, age, NMF_fMRI, out_dir, regression_method)
 
 ########################################################################################
 
