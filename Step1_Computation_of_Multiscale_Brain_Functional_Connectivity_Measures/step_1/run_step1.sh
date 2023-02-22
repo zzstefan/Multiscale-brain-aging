@@ -108,5 +108,4 @@ fi
 ## Reading arguments
 parse $*
 
-
 matlab -nodisplay -nosplash -r "addpath(genpath('$main_dir/scripts/Code_mvNMF_l21_ard_v3_release'));deployFuncInit_vol('${sbjListFile}','${maskFile}','${prepDataFile}','${outDir}','${list_id}','${spaR}','${vxI}','${ard}','${iNum}','${K}','${tNum}','${alpha}','${beta}','${resId}');exit"
