@@ -5,8 +5,6 @@ echo -e "Start time                     : `date +%F-%H:%M:%S`\n"
 
 dataset='All'
 
-
-
 main_dir=/cbica/home/zhouz/projects/istaging/LiHM_NMF2
 sbjList_dir=${main_dir}/subList/${dataset}
 maskFile=/cbica/home/zhouz/projects/istaging/LiHM_NMF/atlas/mask_thr0p5_wmparc_2_cc.nii.gz
