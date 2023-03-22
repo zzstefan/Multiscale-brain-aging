@@ -506,7 +506,7 @@ def predict_within_scale_fullcorr(n_splits, k, n_cv_times, to_harmonize, regress
         features = np.load(fea_dir + '/features_%s.npy'%(str(k)))
     else:
         if k == 1:
-            K = [17, 25, 50, 75, 100, 124, 150]
+            K = [17, 25, 50, 75, 100, 125, 150]
             features = full_correlation_allfeature(All_TC, K, NMF_fMRI, to_harmonize, use_GAMs)
         else:
             features = full_correlation(All_TC, k, NMF_fMRI, to_harmonize, use_GAMs)
@@ -540,14 +540,14 @@ def predict_within_scale_tangent(n_splits, k, n_cv_times, to_harmonize, regressi
         if tangent_method == 'harmonic':
             # correlation_method = 'correlation' # or covariance
             if k == 1:
-                K = [17, 25,50,75, 100, 124,150]
+                K = [17, 25,50,75, 100, 125,150]
                 features = harmonic_allfeature_site(All_TC, K, NMF_fMRI, correlation_method, to_harmonize,
                                                     use_GAMs, mean_index)
             else:
                 features = harmonic_site(All_TC, k, NMF_fMRI, correlation_method, to_harmonize, use_GAMs, mean_index)
         elif tangent_method == 'geometric':
             if k == 1:
-                K = [17, 25, 50, 75, 100, 124, 150]
+                K = [17, 25, 50, 75, 100, 125, 150]
                 features = geometric_allfeature_site(All_TC, K, NMF_fMRI, to_harmonize, use_GAMs, mean_index)
             else:
                 features = geometric_site(All_TC, k, NMF_fMRI, to_harmonize, use_GAMs, mean_index)
@@ -571,7 +571,7 @@ def predict_between_scale(n_splits, n_cv_times, to_harmonize, FC_measure, tangen
     f.close()
     NMF_fMRI = pd.read_pickle(main_dir+'/Data/final_NMF_fMRI_QC.pkl')
     age = NMF_fMRI.Age.values
-    K = [17, 25, 50, 75, 100, 124, 150]
+    K = [17, 25, 50, 75, 100, 125, 150]
 
     new_TC, new_k = get_between_scale_TC(K, All_TC)
     

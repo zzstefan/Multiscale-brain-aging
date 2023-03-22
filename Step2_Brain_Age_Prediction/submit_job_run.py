@@ -17,7 +17,7 @@ harmonized = [0,1]
 fea = ['within']
 regression_method = 'ridge'
 tangent = ['geometric']
-K=[25,50,75,100,124,150,1]
+K=[25,50,75,100,125,150,1]
 #K=[17]
 
 for k in K:
