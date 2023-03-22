@@ -466,9 +466,7 @@ def harmonic_between_scale(TC, k, data, to_harmonize, use_GAMs, mean_index, num_
 def geometric_between_scale(TC, k, data, to_harmonize, use_GAMs, mean_index, num_cores):
     correlation_measure = ConnectivityMeasure(kind='covariance')
     shape = int(k * (k + 1) / 2)
-    tangent_result = np.zeros((4259, shape))
     g_mean = np.zeros((7, k, k))
-    g_mean_upper = np.zeros((7, shape))
     for i, name in enumerate(['BLSA', 'OASIS', 'ABC', 'CARDIA-1', 'CARDIA-3', 'CARDIA-4', 'UKBIOBANK']):
         index = data[data.SITE.str.contains(name)].index
         temp = [TC[i] for i in index]
