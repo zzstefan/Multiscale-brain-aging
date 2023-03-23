@@ -4,4 +4,4 @@ Figure 2 is the correlations between the chronological age and the predicted age
 
 In Figure 3, cal_correlation_network.py can generate Figure 3(A), the multi-scale organization of the brain networks from fine scales to coarse scales. plot_withinCircular.R is used to plot Figure 3(B), along with the required data file.
 
-In Figure 4 is the functional connections showing significant correlations with chronological age. correlation_agedelta_scores.R is used to generate Figure 4.
+Figure 4 is the functional connections showing significant correlations with chronological age. correlation_agedelta_scores.R is used to generate Figure 4.
