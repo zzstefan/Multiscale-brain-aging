@@ -19,7 +19,7 @@ opt = parser.parse_args()
 main_dir = '/cbica/home/zhouz/projects/istaging_2022'
 NMF_fMRI = pd.read_pickle('./Data/final_NMF_fMRI.pkl')
 Age = NMF_fMRI.Age.values
-features = np.load('%s/between/ridge/tangent/geometric/har/features.npy'%(main_dir))
+features = np.load('%s/within/ridge/tangent/geometric/har/features.npy'%(main_dir))
 random_state=opt.seed
 random_state=check_random_state(random_state)
 shuffling_idx = np.arange(Age.shape[0])
@@ -50,7 +50,7 @@ for i in range(100):
     MAE[i] = mean_absolute_error(y_pre, age)
     cor_coef[i] = np.corrcoef(y_pre, age)[0,1]
 
-fea_output = '%s/between/ridge/tangent/geometric/har/fea_permutation' % (main_dir)
+fea_output = '%s/within/ridge/tangent/geometric/har/fea_permutation' % (main_dir)
 if not os.path.exists(fea_output):
     os.makedirs(fea_output)
 np.save('%s/MAE_100time_%s.npy' % (fea_output, str(opt.seed)), MAE)
