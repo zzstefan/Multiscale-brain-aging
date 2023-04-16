@@ -7,4 +7,4 @@
 - We computed the FNs at seven scales (Step 3), yielding seven sets of  K (K=17, 25, 50, 75, 100, 125 and 150) FNs.
 
 
-The brain decomposition was run on a cluster using Sun Grid Engine scheduler. We also have developed a Matlab-based toolbox (pNet, https://github.com/YuncongMa/pNet) which can provide a user-friendly interface to perform personalized functional network computation using the same method.
+2. The brain decomposition was run on a cluster using Sun Grid Engine scheduler. We have developed a Matlab-based toolbox (pNet, https://github.com/YuncongMa/pNet) which can provide a user-friendly interface to perform personalized functional network computation using the same method.
