@@ -12,3 +12,5 @@ This repository contains the codes and example data underlying our recent papers
 This code was written by a single person as a research project.
 
 I am currently still in the process of setting-up / testing this repository and adding more comments here. If you encounter any bugs, please open a respective GitHub Issue; I will try my best to fix them in time!
+
+We developed a Matlab-based toolbox (pNet, https://github.com/YuncongMa/pNet) which can provide a user-friendly interface to perform personalized functional network computation using the same method. Please help testing and all feedbacks are welcomed.
